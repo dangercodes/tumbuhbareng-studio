@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <title>TumbuhBareng — Company Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --brand-bg:#FFF9F2;   /* cream */
+      --brand-blue:#4086CE; /* primary */
+      --brand-green:#E8EC85;/* accent */
+      --brand-dark:#2B2B2B; /* text / dark */
+    }
+    html{scroll-behavior:smooth}
+    .reveal{opacity:0; transform:translateY(16px)}
+    .reveal.show{opacity:1; transform:none; transition:opacity .6s ease, transform .6s ease}
+    .soft{ box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+    .nav-active{color:var(--brand-blue)}
+    .lang-btn{border:1px solid rgba(255,255,255,.25)}
+    .lang-btn.active{background:#fff;color:#2B2B2B}
+  </style>
+</head>
+<body class="antialiased text-[var(--brand-dark)] bg-[var(--brand-blue)]">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-[rgba(43,43,43,0.95)] backdrop-blur border-b border-black/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="TumbuhBareng" class="h-8 md:h-9 w-auto"/>
+      </a>
+      <div class="hidden md:flex items-center gap-4">
+        <nav id="nav" class="flex gap-6 text-sm font-medium text-white/80">
+          <a class="hover:text-[var(--brand-green)]" href="#about" data-i18n="nav.about">About</a>
+          <a class="hover:text-[var(--brand-green)]" href="#vmv" data-i18n="nav.vmv">Vision & Mission</a>
+          <a class="hover:text-[var(--brand-green)]" href="#support" data-i18n="nav.support">We’re Here</a>
+          <a class="hover:text-[var(--brand-green)]" href="#why" data-i18n="nav.why">Why Us</a>
+          <a class="hover:text-[var(--brand-green)]" href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+          <a class="hover:text-[var(--brand-green)]" href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
+          <a class="hover:text-[var(--brand-green)]" href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="btnID" class="lang-btn rounded-lg px-2.5 py-1 text-xs text-white/90" aria-label="Indonesian">ID</button>
+          <button id="btnEN" class="lang-btn rounded-lg px-2.5 py-1 text-xs text-white/90 active" aria-label="English">EN</button>
+        </div>
+      </div>
+      <button id="navToggle" class="md:hidden p-2 rounded-lg border border-white/20 text-white" aria-label="Open Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <!-- mobile menu -->
+    <div id="navMobile" class="md:hidden hidden border-t border-white/10 bg-[rgba(43,43,43,0.95)] text-white/90">
+      <div class="max-w-7xl mx-auto px-4 py-3 grid gap-2 text-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex gap-2">
+            <button id="mBtnID" class="lang-btn rounded-lg px-2.5 py-1 text-xs text-white/90" aria-label="Indonesian">ID</button>
+            <button id="mBtnEN" class="lang-btn rounded-lg px-2.5 py-1 text-xs text-white/90 active" aria-label="English">EN</button>
+          </div>
+        </div>
+        <a class="py-2" href="#about" data-i18n="nav.about">About</a>
+        <a class="py-2" href="#vmv" data-i18n="nav.vmv">Vision & Mission</a>
+        <a class="py-2" href="#support" data-i18n="nav.support">We’re Here</a>
+        <a class="py-2" href="#why" data-i18n="nav.why">Why Us</a>
+        <a class="py-2" href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a class="py-2" href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
+        <a class="py-2" href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Home -->
+  <section id="home" class="bg-gradient-to-b from-[var(--brand-green)]/25 to-[var(--brand-bg)]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <h1 class="text-4xl sm:text-5xl text-white font-extrabold tracking-tight" data-i18n="hero.title">Every brand begins with a story.</h1>
+        <p class="mt-5 text-lg text-white opacity-80" data-i18n="hero.caption">TumbuhBareng believes every brand deserves to be known, remembered, and to grow—not only with a logo, but with a clear identity and the right strategy.</p>
+        <div class="mt-8 flex gap-3">
+          <a href="#portfolio" class="rounded-xl bg-[var(--brand-green)] text-[var(--brand-dark)] px-5 py-3 text-sm font-semibold shadow hover:brightness-95 transition" data-i18n="cta.seeWork">See work</a>
+          <a href="#contact" class="rounded-xl border border-[var(--brand-dark)]/30 px-5 py-3 text-sm text-white font-semibold hover:border-[var(--brand-dark)]/60 transition" data-i18n="cta.startProject">Start a project</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="relative soft overflow-hidden rounded-2xl bg-white">
+          <div class="aspect-[4/3] bg-gradient-to-tr from-[var(--brand-green)]/60 via-white to-[var(--brand-blue)]/40"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <img src="assets/images/brand-intro.jpeg" class="w-full h-auto aspect-[4/3] object-cover" alt="Chase Milli"/>
+            <!-- <div class="text-center">
+              <div class="mx-auto h-16 w-16 rounded-2xl bg-white/70 backdrop-blur grid place-items-center soft">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" class="opacity-80"><path d="M12 3l9 4.5v9L12 21 3 16.5v-9L12 3z" stroke="#4086CE" stroke-width="1.5"/></svg>
+              </div>
+              <p class="mt-4 text-sm opacity-70" data-i18n="hero.tagline">Branding that’s simple, meaningful, and sustainable.</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-20 border-t border-black/5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="text-3xl font-bold tracking-tight text-white" data-i18n="about.heading">What is TumbuhBareng?</h2>
+          <p class="mt-4 leading-relaxed text-white" data-i18n="about.p1">TumbuhBareng is a branding studio that helps businesses build a strong identity and grow sustainably. We provide creative and strategic solutions for brands that may be limited by knowledge, networks, or resources to compete in the market.</p>
+          <p class="mt-4 leading-relaxed text-white" data-i18n="about.p2">We believe growth is a shared journey. We’re committed to helping brands connect with the right audience, increase awareness, and create an environment where clients, teams, and partners can grow together.</p>
+        </div>
+        <div class="reveal">
+          <div class="soft overflow-hidden rounded-2xl bg-white p-6 grid sm:grid-cols-3 gap-6 text-center">
+            <div><div class="text-3xl font-extrabold">120+</div><div class="mt-1 text-xs uppercase tracking-wide opacity-60" data-i18n="about.kpi1">Projects</div></div>
+            <div><div class="text-3xl font-extrabold">50+</div><div class="mt-1 text-xs uppercase tracking-wide opacity-60" data-i18n="about.kpi2">Brands</div></div>
+            <div><div class="text-3xl font-extrabold">10 yrs</div><div class="mt-1 text-xs uppercase tracking-wide opacity-60" data-i18n="about.kpi3">Experience*</div></div>
+          </div>
+          <p class="text-[11px] opacity-50 mt-2 text-white" data-i18n="about.foot">*Replace with your real team stats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision / Mission / Values -->
+  <section id="vmv" class="py-20 bg-white border-y border-black/5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight text-center reveal" data-i18n="vmv.heading">Vision, Mission & Values</h2>
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="reveal soft rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-lg" data-i18n="vmv.vision.h">Vision</h3>
+          <p class="mt-2 opacity-80" data-i18n="vmv.vision.p">To be a trusted partner that supports brands and the people behind them to grow together toward a sustainable future.</p>
+        </div>
+        <div class="reveal soft rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-lg" data-i18n="vmv.mission.h">Mission</h3>
+          <ul class="mt-2 opacity-80 space-y-2 list-disc list-inside">
+            <li data-i18n="vmv.mission.i1">Help brands build strong identities with the right strategy.</li>
+            <li data-i18n="vmv.mission.i2">Connect businesses with the right audience and build long‑term awareness.</li>
+            <li data-i18n="vmv.mission.i3">Provide creative and practical solutions for every brand challenge.</li>
+            <li data-i18n="vmv.mission.i4">Create a collaborative ecosystem where clients and teams can grow together.</li>
+          </ul>
+        </div>
+        <div class="reveal soft rounded-2xl bg-white p-6">
+          <h3 class="font-semibold text-lg" data-i18n="vmv.values.h">Values</h3>
+          <ul class="mt-2 opacity-80 space-y-2 list-disc list-inside">
+            <li data-i18n="vmv.values.i1">Grow Together & Collaboration</li>
+            <li data-i18n="vmv.values.i2">Meaningful Creativity</li>
+            <li data-i18n="vmv.values.i3">Empathy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- We’re Here For This -->
+  <section id="support" class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <h2 class="text-3xl font-bold tracking-tight text-white" data-i18n="support.heading">We’re Here for This…</h2>
+        <p class="mt-4 opacity-80 text-white" data-i18n="support.caption">TumbuhBareng brings the right solutions for your brand. Choose services based on your needs.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="soft rounded-2xl bg-white p-5">
+            <h3 class="font-semibold" data-i18n="support.s1.h">Brand Identity</h3>
+            <ul class="mt-2 text-sm opacity-80 list-disc list-inside">
+              <li data-i18n="support.s1.i1">Main & secondary logo</li>
+              <li data-i18n="support.s1.i2">Color palette & typography</li>
+              <li data-i18n="support.s1.i3">Brand usage guide (GSM)</li>
+              <li data-i18n="support.s1.i4">Bonus 1 design</li>
+            </ul>
+            <p class="mt-3 text-xs opacity-60" data-i18n="support.s1.meta">Timeline: 1–2 weeks • Revisions: up to 2x</p>
+          </div>
+          <div class="soft rounded-2xl bg-white p-5">
+            <h3 class="font-semibold" data-i18n="support.s2.h">Social Media Templates</h3>
+            <ul class="mt-2 text-sm opacity-80 list-disc list-inside">
+              <li data-i18n="support.s2.i1">6 Instagram templates</li>
+              <li data-i18n="support.s2.i2">Supporting visual elements</li>
+              <li data-i18n="support.s2.i3">Optional typography & palette</li>
+              <li data-i18n="support.s2.i4">Bonus 1 design</li>
+            </ul>
+            <p class="mt-3 text-xs opacity-60" data-i18n="support.s2.meta">Timeline: 1 week • Revisions: up to 2x</p>
+          </div>
+          <div class="soft rounded-2xl bg-white p-5">
+            <h3 class="font-semibold" data-i18n="support.s3.h">Campaign / Event Materials</h3>
+            <ul class="mt-2 text-sm opacity-80 list-disc list-inside">
+              <li data-i18n="support.s3.i1">Poster, banner, flyer, brochure</li>
+              <li data-i18n="support.s3.i2">Digital/print assets, merchandise</li>
+              <li data-i18n="support.s3.i3">Bonus 1 design</li>
+            </ul>
+            <p class="mt-3 text-xs opacity-60" data-i18n="support.s3.meta">Timeline: 1–3 weeks • Revisions: up to 3x</p>
+          </div>
+          <div class="soft rounded-2xl bg-white p-5">
+            <h3 class="font-semibold" data-i18n="support.s4.h">Individual Design Service</h3>
+            <ul class="mt-2 text-sm opacity-80 list-disc list-inside">
+              <li data-i18n="support.s4.i1">Poster, banner, flyer, business card</li>
+              <li data-i18n="support.s4.i2">Sticker, menu, simple motion</li>
+            </ul>
+            <p class="mt-3 text-xs opacity-60" data-i18n="support.s4.meta">Timeline: 1–2 days • Revisions: up to 1x</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="soft rounded-2xl overflow-hidden bg-white p-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <div class="text-sm opacity-60" data-i18n="support.kpi1.t">Avg. response time</div>
+              <div class="text-2xl font-bold" data-i18n="support.kpi1.v">&lt; 24 hours</div>
+            </div>
+            <div>
+              <div class="text-sm opacity-60" data-i18n="support.kpi2.t">Time to deliver</div>
+              <div class="text-2xl font-bold" data-i18n="support.kpi2.v">Fast & measured</div>
+            </div>
+            <div>
+              <div class="text-sm opacity-60" data-i18n="support.kpi3.t">Working model</div>
+              <div class="text-2xl font-bold" data-i18n="support.kpi3.v">Collaborative</div>
+            </div>
+            <div>
+              <div class="text-sm opacity-60" data-i18n="support.kpi4.t">Outcomes</div>
+              <div class="text-2xl font-bold" data-i18n="support.kpi4.v">Measurable</div>
+            </div>
+          </div>
+          <p class="mt-4 text-sm opacity-60" data-i18n="support.note">*Service details can be tailored to your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section id="why" class="py-20 bg-gradient-to-b from-[var(--brand-bg)] to-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight text-center reveal" data-i18n="why.heading">Why Choose TumbuhBareng?</h2>
+      <div class="mt-12 grid md:grid-cols-4 gap-6">
+        <div class="reveal soft rounded-2xl bg-white p-6">
+          <h3 class="font-semibold" data-i18n="why.i1.h">Partner, not vendor</h3>
+          <p class="mt-2 opacity-80" data-i18n="why.i1.p">We grow with your brand—not just a service provider.</p>
+        </div>
+        <div class="reveal soft rounded-2xl bg-white p-6">
+          <h3 class="font-semibold" data-i18n="why.i2.h">Collaboration is key</h3>
+          <p class="mt-2 opacity-80" data-i18n="why.i2.p">We believe the best growth is created together.</p>
+        </div>
+        <div class="reveal soft rounded-2xl bg-white p-6">
+          <h3 class="font-semibold" data-i18n="why.i3.h">We understand starting from zero</h3>
+          <p class="mt-2 opacity-80" data-i18n="why.i3.p">Empathy for the challenges of SMEs and new brands.</p>
+        </div>
+        <div class="reveal soft rounded-2xl bg-white p-6">
+          <h3 class="font-semibold" data-i18n="why.i4.h">Creativity + Strategy</h3>
+          <p class="mt-2 opacity-80" data-i18n="why.i4.p">Results you can see—not just talk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-white" data-i18n="portfolio.heading">Selected Work</h2>
+          <p class="mt-2 opacity-80 text-white" data-i18n="portfolio.caption">Three recent case studies across industries.</p>
+        </div>
+        <a href="#contact" class="hidden sm:inline-flex items-center rounded-xl bg-[var(--brand-green)] px-4 py-2 text-sm font-semibold shadow hover:brightness-95 transition" data-i18n="portfolio.cta">Discuss a project</a>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Abipraja -->
+        <article class="reveal soft rounded-2xl overflow-hidden bg-white group">
+          <img src="assets/images/portfolio_abipraja.jpeg" class="w-full h-auto aspect-[4/3] object-cover" alt="PT Abipraja Services"/>
+          <div class="p-5">
+            <h3 class="font-semibold group-hover:text-[var(--brand-blue)] transition">PT Abipraja Services</h3>
+            <p class="mt-1 text-sm opacity-80" data-i18n="portfolio.abipraja">Technology company (2024, Indonesia). Challenge: needed a strong visual identity. Solution: solid brand identity plus professional business cards.</p>
+          </div>
+        </article>
+        <!-- Chase Milli -->
+        <article class="reveal soft rounded-2xl overflow-hidden bg-white group">
+          <img src="assets/images/portfolio_chase_mili.jpeg" class="w-full h-auto aspect-[4/3] object-cover" alt="Chase Milli"/>
+          <div class="p-5">
+            <h3 class="font-semibold group-hover:text-[var(--brand-blue)] transition">Chase Milli</h3>
+            <p class="mt-1 text-sm opacity-80" data-i18n="portfolio.chase">Unisex fashion brand (2024, US). Solution: full brand identity; logo combining initials C+M with a hanger symbol.</p>
+          </div>
+        </article>
+        <!-- Coocake -->
+        <article class="reveal soft rounded-2xl overflow-hidden bg-white group">
+          <img src="assets/images/portfolio_coocake.jpeg" class="w-full h-auto aspect-[4/3] object-cover" alt="Coocake"/>
+          <div class="p-5">
+            <h3 class="font-semibold group-hover:text-[var(--brand-blue)] transition">Coocake</h3>
+            <p class="mt-1 text-sm opacity-80" data-i18n="portfolio.coocake">Steamed brownies brand (2017–2025, Indonesia). Rebranding: simple & timeless logo, packaging, mascot, and social media templates.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-white border-y border-black/5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight text-center reveal" data-i18n="test.heading">What Clients Say</h2>
+      <p class="text-center opacity-60 mt-2" data-i18n="test.note">(Add your real client testimonials here — we’ll format them for you)</p>
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <figure class="reveal soft rounded-2xl bg-white p-6 border border-black/5">
+          <blockquote data-i18n="test.q1">“Responsive team, tidy design, and a clear process. Results matched our expectations.”</blockquote>
+          <figcaption class="mt-4 text-sm opacity-70" data-i18n="test.a1">— Client Name, Role @ Company</figcaption>
+        </figure>
+        <figure class="reveal soft rounded-2xl bg-white p-6 border border-black/5">
+          <blockquote data-i18n="test.q2">“Our rebrand became more consistent and easier to apply.”</blockquote>
+          <figcaption class="mt-4 text-sm opacity-70" data-i18n="test.a2">— Client Name, Role @ Company</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
+      <div class="reveal">
+        <h2 class="text-3xl font-bold tracking-tight text-white" data-i18n="contact.heading">Let’s Grow Together</h2>
+        <p class="mt-3 opacity-80 text-white" data-i18n="contact.caption">Tell us what you need — we’ll respond within one business day.</p>
+
+        <form class="mt-8 soft rounded-2xl bg-white p-6 space-y-5" action="https://formspree.io/f/meoldnpl" method="POST">
+
+          <input type="hidden" name="_subject" value="New inquiry from TumbuhBareng site" />
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block text-sm"><span data-i18n="contact.name">Name</span>
+              <input name="name" required type="text" class="mt-1 w-full rounded-xl border border-[var(--brand-dark)]/20 px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand-blue)]/20" placeholder="Your name" />
+            </label>
+            <label class="block text-sm"><span data-i18n="contact.email">Email</span>
+              <input name="email" required type="email" class="mt-1 w-full rounded-xl border border-[var(--brand-dark)]/20 px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand-blue)]/20" placeholder="you@company.com" />
+            </label>
+          </div>
+          <label class="block text-sm"><span data-i18n="contact.company">Company</span>
+            <input name="company" type="text" class="mt-1 w-full rounded-xl border border-[var(--brand-dark)]/20 px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand-blue)]/20" placeholder="Company name" />
+          </label>
+          <label class="block text-sm"><span data-i18n="contact.brief">Project brief</span>
+            <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border border-[var(--brand-dark)]/20 px-3 py-2 outline-none focus:ring-2 focus:ring-[var(--brand-blue)]/20" placeholder="Goals & requirements…"></textarea>
+          </label>
+          <div class="flex items-center justify-between gap-4">
+            <label class="inline-flex items-center gap-2 text-sm opacity-80">
+              <input type="checkbox" class="rounded border-[var(--brand-dark)]/30" required /> <span data-i18n="contact.terms">I agree to the terms</span>
+            </label>
+            <button class="rounded-xl bg-[var(--brand-blue)] text-white px-5 py-3 text-sm font-semibold shadow hover:brightness-95 transition" data-i18n="contact.send">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="reveal grid sm:grid-cols-2 gap-6">
+        <div class="soft rounded-2xl bg-white p-5 border border-black/5">
+          <div class="text-xs uppercase tracking-wide opacity-60" data-i18n="contact.info.email">Email</div>
+          <div class="font-semibold text-sm">tumbuhbareng.agency@gmail.com</div>
+        </div>
+        <div class="soft rounded-2xl bg-white p-5 border border-black/5">
+          <div class="text-xs uppercase tracking-wide opacity-60" data-i18n="contact.info.phone">Phone</div>
+          <div class="font-semibold text-sm">+62 821 2240 2103</div>
+        </div>
+        <div class="soft rounded-2xl bg-white p-5 border border-black/5">
+          <div class="text-xs uppercase tracking-wide opacity-60" data-i18n="contact.info.location">Location</div>
+          <div class="font-semibold text-sm" data-i18n="contact.info.locationValue">Indonesia • Remote‑first</div>
+        </div>
+        <div class="soft rounded-2xl bg-white p-5 border border-black/5">
+          <div class="text-xs uppercase tracking-wide opacity-60">Instagram</div>
+          <div class="font-semibold text-sm">@tumbuh.bareng.id</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6282122402103?text=Hi%20TumbuhBareng%2C%20I%27m%20interested%20in%20branding%20support." target="_blank" rel="noopener" class="fixed bottom-5 right-5 md:right-2 z-50 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg p-4" aria-label="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 .01 5.37.01 12c0 2.11.55 4.11 1.6 5.9L0 24l6.27-1.64A11.96 11.96 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.2-3.48-8.52zM12 22a9.93 9.93 0 01-5.07-1.39l-.36-.21-3.73.98.99-3.63-.24-.37A9.93 9.93 0 012 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.44-7.56c-.3-.15-1.79-.88-2.06-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.62-.92-2.2-.24-.58-.5-.5-.67-.5-.17 0-.38 0-.58 0-.2 0-.53.08-.8.38-.27.3-1.05 1.02-1.05 2.48s1.08 2.87 1.24 3.07c.15.2 2.13 3.25 5.16 4.56.72.31 1.29.5 1.73.64.72.23 1.38.2 1.9.12.58-.09 1.79-.73 2.04-1.43.25-.7.25-1.3.17-1.43-.07-.13-.27-.2-.57-.35z"/></svg>
+  </a>
+
+  <!-- Call to Action Bar -->
+  <div class="sticky bottom-4 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 sm:pr-10 lg:px-8">
+      <div class="soft rounded-2xl bg-[var(--brand-bg)] px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm" data-i18n="ctaBar.copy">Ready to take your brand to the next level?</p>
+        <a href="#contact" class="inline-flex items-center rounded-xl bg-[var(--brand-blue)] text-white px-4 py-2 text-sm font-semibold hover:bg-white/90 transition" data-i18n="ctaBar.button">Contact us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-black/5 py-10 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm opacity-70">© <span id="year"></span> TumbuhBareng. All rights reserved.</p>
+      <nav class="text-sm opacity-80 flex gap-4">
+        <a class="hover:text-[var(--brand-blue)]" href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a class="hover:text-[var(--brand-blue)]" href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
+        <a class="hover:text-[var(--brand-blue)]" href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Language dictionary (EN default)
+    window.__lang = 'en';
+    const i18n = {
+      en: {
+        nav:{about:'About',vmv:'Vision & Mission',support:"We’re Here",why:'Why Us',portfolio:'Portfolio',testimonials:'Testimonials',contact:'Contact'},
+        hero:{title:'Every brand begins with a story.',caption:"TumbuhBareng believes every brand deserves to be known, remembered, and to grow—not only with a logo, but with a clear identity and the right strategy.",tagline:"Branding that’s simple, meaningful, and sustainable."},
+        cta:{seeWork:'See work',startProject:'Start a project'},
+        about:{heading:'What is TumbuhBareng?',p1:'TumbuhBareng is a branding studio that helps businesses build a strong identity and grow sustainably. We provide creative and strategic solutions for brands that may be limited by knowledge, networks, or resources to compete in the market.',p2:'We believe growth is a shared journey. We’re committed to helping brands connect with the right audience, increase awareness, and create an environment where clients, teams, and partners can grow together.',kpi1:'Projects',kpi2:'Brands',kpi3:'Experience*',foot:"*Replace with your real team stats."},
+        vmv:{heading:'Vision, Mission & Values',vision:{h:'Vision',p:'To be a trusted partner that supports brands and the people behind them to grow together toward a sustainable future.'},mission:{h:'Mission',i1:'Help brands build strong identities with the right strategy.',i2:'Connect businesses with the right audience and build long‑term awareness.',i3:'Provide creative and practical solutions for every brand challenge.',i4:'Create a collaborative ecosystem where clients and teams can grow together.'},values:{h:'Values',i1:'Grow Together & Collaboration',i2:'Meaningful Creativity',i3:'Empathy'}},
+        support:{heading:"We’re Here for This…",caption:'TumbuhBareng brings the right solutions for your brand. Choose services based on your needs.',s1:{h:'Brand Identity',i1:'Main & secondary logo',i2:'Color palette & typography',i3:'Brand usage guide (GSM)',i4:'Bonus 1 design',meta:'Timeline: 1–2 weeks • Revisions: up to 2x'},s2:{h:'Social Media Templates',i1:'6 Instagram templates',i2:'Supporting visual elements',i3:'Optional typography & palette',i4:'Bonus 1 design',meta:'Timeline: 1 week • Revisions: up to 2x'},s3:{h:'Campaign / Event Materials',i1:'Poster, banner, flyer, brochure',i2:'Digital/print assets, merchandise',i3:'Bonus 1 design',meta:'Timeline: 1–3 weeks • Revisions: up to 3x'},s4:{h:'Individual Design Service',i1:'Poster, banner, flyer, business card',i2:'Sticker, menu, simple motion',meta:'Timeline: 1–2 days • Revisions: up to 1x'},kpi1:{t:'Avg. response time',v:'< 24 hours'},kpi2:{t:'Time to deliver',v:'Fast & measured'},kpi3:{t:'Working model',v:'Collaborative'},kpi4:{t:'Outcomes',v:'Measurable'},note:'*Service details can be tailored to your needs.'},
+        why:{heading:'Why Choose TumbuhBareng?',i1:{h:'Partner, not vendor',p:'We grow with your brand—not just a service provider.'},i2:{h:'Collaboration is key',p:'We believe the best growth is created together.'},i3:{h:'We understand starting from zero',p:'Empathy for the challenges of SMEs and new brands.'},i4:{h:'Creativity + Strategy',p:'Results you can see—not just talk.'}},
+        portfolio:{heading:'Selected Work',caption:'Three recent case studies across industries.',cta:'Discuss a project',abipraja:'Technology company (2024, Indonesia). Challenge: needed a strong visual identity. Solution: solid brand identity plus professional business cards.',chase:'Unisex fashion brand (2024, US). Solution: full brand identity; logo combining initials C+M with a hanger symbol.',coocake:'Steamed brownies brand (2017–2025, Indonesia). Rebranding: simple & timeless logo, packaging, mascot, and social media templates.'},
+        test:{heading:'What Clients Say',note:'(Add your real client testimonials here — we’ll format them for you)',q1:'“Responsive team, tidy design, and a clear process. Results matched our expectations.”',a1:'— Client Name, Role @ Company',q2:'“Our rebrand became more consistent and easier to apply.”',a2:'— Client Name, Role @ Company'},
+        contact:{heading:"Let’s Grow Together",caption:'Tell us what you need — we’ll respond within one business day.',name:'Name',email:'Email',company:'Company',brief:'Project brief',terms:'I agree to the terms',send:'Send Message',info:{email:'Email',phone:'Phone',location:'Location'},'info.locationValue':'Indonesia • Remote‑first'},
+        ctaBar:{copy:'Ready to take your brand to the next level?',button:'Contact us'}
+      },
+      id: {
+        nav:{about:'Tentang',vmv:'Visi & Misi',support:'Kami Hadir',why:'Kenapa Kami',portfolio:'Portofolio',testimonials:'Testimoni',contact:'Kontak'},
+        hero:{title:'Setiap brand lahir dari sebuah cerita.',caption:'TumbuhBareng percaya setiap brand layak dikenal, diingat, dan bertumbuh—bukan hanya dengan logo, tetapi dengan identitas yang jelas serta strategi yang tepat.',tagline:'Branding yang sederhana, bermakna, dan berkelanjutan.'},
+        cta:{seeWork:'Lihat karya',startProject:'Mulai proyek'},
+        about:{heading:'Apa Itu TumbuhBareng?',p1:'TumbuhBareng adalah studio branding yang membantu bisnis membangun identitas yang kuat dan berkembang secara berkelanjutan. Kami menghadirkan solusi kreatif dan strategis bagi brand yang mungkin masih terbatas dalam pengetahuan, jaringan, maupun sumber daya untuk bersaing di pasar.',p2:'Kami percaya pertumbuhan adalah perjalanan bersama. Kami membantu brand terhubung dengan audiens yang tepat, meningkatkan awareness, dan membangun lingkungan di mana klien, tim, dan mitra bisa tumbuh bareng.',kpi1:'Proyek',kpi2:'Brand',kpi3:'Pengalaman*',foot:'*Angka dapat disesuaikan dengan data tim Anda.'},
+        vmv:{heading:'Visi, Misi & Nilai',vision:{h:'Visi',p:'Menjadi partner terpercaya yang mendampingi brand dan orang‑orang di dalamnya untuk berkembang bersama menuju masa depan yang berkelanjutan.'},mission:{h:'Misi',i1:'Membangun identitas brand yang kuat dengan strategi yang tepat.',i2:'Menghubungkan bisnis dengan audiens yang sesuai dan membangun awareness jangka panjang.',i3:'Memberikan solusi kreatif dan praktis untuk setiap tantangan brand.',i4:'Menciptakan ekosistem kolaboratif di mana klien dan tim tumbuh bersama.'},values:{h:'Nilai',i1:'Tumbuh Bareng & Kolaborasi',i2:'Kreativitas yang Bermakna',i3:'Empati'}},
+        support:{heading:'Kami Hadir untuk Ini…',caption:'TumbuhBareng hadir dengan solusi tepat untuk brand kamu. Pilih layanan sesuai kebutuhan.',s1:{h:'Brand Identity',i1:'Logo utama & sekunder',i2:'Palet warna & tipografi',i3:'Panduan penggunaan (GSM)',i4:'Bonus 1 desain',meta:'Durasi: 1–2 minggu • Revisi: maks 2x'},s2:{h:'Social Media Template',i1:'6 Template Instagram',i2:'Elemen visual pendukung',i3:'Opsi tipografi & palet warna',i4:'Bonus 1 desain',meta:'Durasi: 1 minggu • Revisi: maks 2x'},s3:{h:'Campaign/Event Materials',i1:'Poster, banner, flyer, brosur',i2:'Aset digital/cetak, merchandise',i3:'Bonus 1 desain',meta:'Durasi: 1–3 minggu • Revisi: maks 3x'},s4:{h:'Individual Design Service',i1:'Poster, banner, flyer, kartu nama',i2:'Stiker, menu, simple motion',meta:'Durasi: 1–2 hari • Revisi: maks 1x'},kpi1:{t:'Rata-rata respons',v:'< 24 jam'},kpi2:{t:'Waktu pengerjaan',v:'Cepat & terukur'},kpi3:{t:'Model kerja',v:'Kolaboratif'},kpi4:{t:'Hasil',v:'Terukur'},note:'*Detail layanan dapat disesuaikan kebutuhan.'},
+        why:{heading:'Kenapa Pilih TumbuhBareng?',i1:{h:'Partner, bukan vendor',p:'Kami tumbuh bersama brand kamu—bukan sekadar penyedia jasa.'},i2:{h:'Kolaborasi adalah kunci',p:'Percaya bahwa pertumbuhan terbaik tercipta bersama.'},i3:{h:'Paham mulai dari nol',p:'Empati terhadap tantangan UMKM dan brand baru.'},i4:{h:'Kreativitas + Strategi',p:'Hasil yang bisa dilihat, bukan sekadar wacana.'}},
+        portfolio:{heading:'Portofolio Pilihan',caption:'Tiga studi kasus terbaru dari berbagai industri.',cta:'Diskusikan proyek',abipraja:'Perusahaan teknologi (2024, Indonesia). Tantangan: butuh identitas visual kuat. Solusi: brand identity solid + kartu nama profesional.',chase:'Brand fashion unisex (2024, AS). Solusi: identitas brand lengkap; logo gabungan inisial C+M dengan simbol hanger.',coocake:'Brand brownies kukus (2017–2025, Indonesia). Rebranding: logo simpel & timeless, kemasan, maskot, dan template media sosial.'},
+        test:{heading:'Apa Kata Klien',note:'(Tambahkan testimoni asli di sini — siap kami format)',q1:'“Tim responsif, desain rapi, dan prosesnya jelas. Hasilnya sesuai harapan.”',a1:'— Nama Klien, Jabatan @ Perusahaan',q2:'“Rebranding kami jadi lebih konsisten dan mudah diaplikasikan.”',a2:'— Nama Klien, Jabatan @ Perusahaan'},
+        contact:{heading:'Yuk Tumbuh Bareng',caption:'Ceritakan kebutuhanmu — kami akan merespons maksimal 1 hari kerja.',name:'Nama',email:'Email',company:'Perusahaan',brief:'Ringkasan Proyek',terms:'Saya setuju dengan ketentuan',send:'Kirim Pesan',info:{email:'Email',phone:'Telepon',location:'Lokasi'},'info.locationValue':'Indonesia • Remote‑first'},
+        ctaBar:{copy:'Siap bawa brand‑mu ke level berikutnya?',button:'Hubungi Kami'}
+      }
+    };
+
+    function applyLang(lang){
+      window.__lang = lang;
+      const dict = i18n[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const parts = key.split('.');
+        let val = dict;
+        for(const p of parts){ val = val?.[p]; }
+        if(typeof val === 'string') el.textContent = val;
+      });
+      // Toggle active buttons
+      const ids = ['btnID','btnEN','mBtnID','mBtnEN'];
+      ids.forEach(id=>document.getElementById(id)?.classList.remove('active'));
+      if(lang==='id'){ document.getElementById('btnID')?.classList.add('active'); document.getElementById('mBtnID')?.classList.add('active'); }
+      else { document.getElementById('btnEN')?.classList.add('active'); document.getElementById('mBtnEN')?.classList.add('active'); }
+    }
+
+    // Init language
+    applyLang('en');
+
+    // Buttons
+    document.getElementById('btnID')?.addEventListener('click',()=>applyLang('id'));
+    document.getElementById('btnEN')?.addEventListener('click',()=>applyLang('en'));
+    document.getElementById('mBtnID')?.addEventListener('click',()=>applyLang('id'));
+    document.getElementById('mBtnEN')?.addEventListener('click',()=>applyLang('en'));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show') }) }, { threshold: 0.12 })
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el))
+
+    // Footer year
+    document.getElementById('year')?.appendChild(document.createTextNode(new Date().getFullYear()))
+
+    // Mobile nav toggle
+    const btn = document.getElementById('navToggle');
+    const mobile = document.getElementById('navMobile');
+    btn?.addEventListener('click', () => mobile.classList.toggle('hidden'))
+
+    // Simple scrollspy: highlight current nav link
+    const sections = ['home','about','vmv','support','why','portfolio','testimonials','contact']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+    const navLinks = [...document.querySelectorAll('header nav a'), ...document.querySelectorAll('#navMobile a')];
+
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          navLinks.forEach(a => a.classList.remove('nav-active'))
+          const active = [...navLinks].find(a => a.getAttribute('href') === `#${entry.target.id}`)
+          active?.classList.add('nav-active')
+        }
+      })
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 })
+    sections.forEach(sec => spy.observe(sec))
+  </script>
+</body>
+</html>
